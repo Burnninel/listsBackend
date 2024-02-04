@@ -10,9 +10,10 @@ datasource db {
 model User {
   id          String  @id @default(uuid())
   googleId    String? @unique
-  email       String  @unique
   username    String
-  googlePhoto String
+  email       String  @unique
+  password    String?
+  googlePhoto String?
 
   @@map("users")
 }

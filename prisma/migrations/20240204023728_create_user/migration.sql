@@ -2,9 +2,10 @@
 CREATE TABLE "users" (
     "id" TEXT NOT NULL,
     "googleId" TEXT,
-    "email" TEXT NOT NULL,
     "username" TEXT NOT NULL,
-    "googlePhoto" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "password" TEXT,
+    "googlePhoto" TEXT,
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
