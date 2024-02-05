@@ -8,15 +8,14 @@ class SignInController {
     const service = new SignInService();
     try {
       const result = await service.execute(user);
-      response.json(result);
-      console.log(result);
+      response.status(200).json(result);
     } catch (error: any) {
-        if(error.message === 'Email invalid!') {
-            return response.json(error.message)
-        }   
-        if(error.message === 'Password invalid!') {
-            return response.json(error.message)
-        }
+      if (error.message === "Email invalid!") {
+        return response.status(401).json(error.message);
+      }
+      if (error.message === "Password invalid!") {
+        return response.status(401).json(error.message);
+      }
     }
   }
 }
